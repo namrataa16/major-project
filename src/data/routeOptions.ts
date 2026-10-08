@@ -1,0 +1,220 @@
+import { RouteOption } from '../types';
+
+export const MUMBAI_PUNE_ROUTES: RouteOption[] = [
+  {
+    id: 'route-a-old-nh4',
+    name: 'Route A — Old NH4 / Bhor Ghat',
+    routeCode: 'ROUTE-A',
+    origin: 'Mumbai',
+    destination: 'Pune',
+    distanceKm: 120,
+    estimatedDuration: '3h 50m',
+    durationHours: 3.83,
+    estimatedFuelCost: 2950,
+    tollCost: 420,
+    roadQuality: 'Medium',
+    terrainDifficulty: 'High',
+    gradientPercentage: 8.2,
+    ghatSectionKm: 24,
+    elevationGainMeters: 620,
+    suitabilityScore: 71,
+    isRecommended: false,
+    reasons: [
+      'Shortest geographical distance (120 km)',
+      'Lower toll cost than expressway'
+    ],
+    warnings: [
+      'Steep 8.2% ghat gradient increases heavy vehicle strain',
+      'Higher gear shifting increases fuel burn by ~14%',
+      'Elevated brake & clutch wear on descent'
+    ],
+    routePathDescription: 'Sion → Panvel → Khopoli → Khandala Ghat (Old Highway) → Lonavala → Talegaon → Pune',
+    mapPolylineCoords: [
+      [20, 80],
+      [35, 72],
+      [48, 62],
+      [58, 48],
+      [68, 42],
+      [82, 35],
+      [90, 25]
+    ]
+  },
+  {
+    id: 'route-b-expressway',
+    name: 'Route B — Mumbai-Pune Expressway (Engineered Corridor)',
+    routeCode: 'ROUTE-B',
+    origin: 'Mumbai',
+    destination: 'Pune',
+    distanceKm: 135,
+    estimatedDuration: '3h 35m',
+    durationHours: 3.58,
+    estimatedFuelCost: 2700,
+    tollCost: 510,
+    roadQuality: 'High',
+    terrainDifficulty: 'Low',
+    gradientPercentage: 3.8,
+    ghatSectionKm: 11,
+    elevationGainMeters: 560,
+    suitabilityScore: 89,
+    isRecommended: true,
+    recommendedTagline: '11% longer distance, but estimated 8% lower operating cost and lower terrain difficulty.',
+    reasons: [
+      'Lower estimated fuel cost (₹2,700 vs ₹2,950)',
+      'Better road quality (Grade A concrete expressway)',
+      'Lower terrain difficulty (Gentle engineered gradients)',
+      'Better suited for selected vehicle (Ashok Leyland 2820 / 20T payload)',
+      'Faster estimated arrival (3h 35m vs 3h 50m)'
+    ],
+    warnings: [],
+    routePathDescription: 'Chembur → Vashi → Kalamboli → Yashwantrao Chavan Expressway → Khalapur → Ozarde → Somatne → Hinjewadi / Pune',
+    mapPolylineCoords: [
+      [20, 80],
+      [30, 85],
+      [45, 82],
+      [62, 70],
+      [75, 52],
+      [85, 38],
+      [90, 25]
+    ]
+  },
+  {
+    id: 'route-c-karjat-bypass',
+    name: 'Route C — Karjat / Kamshet Rural Bypass',
+    routeCode: 'ROUTE-C',
+    origin: 'Mumbai',
+    destination: 'Pune',
+    distanceKm: 128,
+    estimatedDuration: '4h 05m',
+    durationHours: 4.08,
+    estimatedFuelCost: 3050,
+    tollCost: 350,
+    roadQuality: 'Low',
+    terrainDifficulty: 'Medium',
+    gradientPercentage: 5.5,
+    ghatSectionKm: 18,
+    elevationGainMeters: 590,
+    suitabilityScore: 64,
+    isRecommended: false,
+    reasons: [
+      'Lowest toll fee (₹350)',
+      'Avoids main expressway traffic during rush hours'
+    ],
+    warnings: [
+      'Sub-optimal road surface with frequent single-lane bottlenecks',
+      'Slow average speed (31 km/h) causing longer trip duration',
+      'Unfavorable for multi-axle trailers over 16 tonnes'
+    ],
+    routePathDescription: 'Navi Mumbai → Chowk → Karjat → Neral Road → Kamshet Bypass → Dehu Road → Pune',
+    mapPolylineCoords: [
+      [20, 80],
+      [32, 60],
+      [45, 45],
+      [60, 32],
+      [75, 28],
+      [84, 22],
+      [90, 25]
+    ]
+  }
+];
+
+export const OTHER_CORRIDOR_ROUTES: Record<string, RouteOption[]> = {
+  'mumbai-surat': [
+    {
+      id: 'mumbai-surat-nh48',
+      name: 'Route 1 — NH48 Western Corridor via Manor',
+      routeCode: 'ROUTE-A',
+      origin: 'Mumbai',
+      destination: 'Surat',
+      distanceKm: 285,
+      estimatedDuration: '5h 45m',
+      durationHours: 5.75,
+      estimatedFuelCost: 6400,
+      tollCost: 980,
+      roadQuality: 'High',
+      terrainDifficulty: 'Low',
+      gradientPercentage: 2.1,
+      ghatSectionKm: 4,
+      elevationGainMeters: 180,
+      suitabilityScore: 92,
+      isRecommended: true,
+      recommendedTagline: 'Optimal 6-lane national highway for heavy freight with minimal gradient.',
+      reasons: [
+        'Excellent pavement surface with minimal stop-and-go friction',
+        'Consistently high fuel efficiency for 20T+ trucks',
+        'Direct connection to Surat industrial ring road'
+      ],
+      routePathDescription: 'Goregaon → Vasai → Manor → Charoti → Vapi → Valsad → Navsari → Surat',
+    },
+    {
+      id: 'mumbai-surat-coastal',
+      name: 'Route 2 — Palghar Coastal State Highway Route',
+      routeCode: 'ROUTE-B',
+      origin: 'Mumbai',
+      destination: 'Surat',
+      distanceKm: 268,
+      estimatedDuration: '6h 30m',
+      durationHours: 6.5,
+      estimatedFuelCost: 6900,
+      tollCost: 450,
+      roadQuality: 'Medium',
+      terrainDifficulty: 'Medium',
+      gradientPercentage: 4.2,
+      ghatSectionKm: 8,
+      elevationGainMeters: 220,
+      suitabilityScore: 68,
+      isRecommended: false,
+      reasons: ['Lower toll costs'],
+      warnings: ['Narrow rural intersections and speed breakers increase trip fatigue'],
+      routePathDescription: 'Vasai → Palghar → Dahanu → Umbergaon → Vapi → Surat',
+    }
+  ],
+  'thane-nashik': [
+    {
+      id: 'thane-nashik-nh160',
+      name: 'Route 1 — NH160 Kasara Ghat 4-Lane Route',
+      routeCode: 'ROUTE-A',
+      origin: 'Thane',
+      destination: 'Nashik',
+      distanceKm: 142,
+      estimatedDuration: '3h 25m',
+      durationHours: 3.41,
+      estimatedFuelCost: 3100,
+      tollCost: 440,
+      roadQuality: 'High',
+      terrainDifficulty: 'Medium',
+      gradientPercentage: 6.1,
+      ghatSectionKm: 14,
+      elevationGainMeters: 650,
+      suitabilityScore: 88,
+      isRecommended: true,
+      recommendedTagline: 'Wide gradient-managed alignment suited for heavy multi-axle freight.',
+      reasons: [
+        'Modern engineered Kasara bypass lanes',
+        'Fastest turnaround time for Bhiwandi warehousing'
+      ],
+      routePathDescription: 'Thane → Bhiwandi Bypass → Shahapur → Kasara Ghat → Igatpuri → Nashik',
+    },
+    {
+      id: 'thane-nashik-murbad',
+      name: 'Route 2 — Murbad / Otur Interior Route',
+      routeCode: 'ROUTE-B',
+      origin: 'Thane',
+      destination: 'Nashik',
+      distanceKm: 136,
+      estimatedDuration: '4h 15m',
+      durationHours: 4.25,
+      estimatedFuelCost: 3450,
+      tollCost: 210,
+      roadQuality: 'Low',
+      terrainDifficulty: 'High',
+      gradientPercentage: 8.9,
+      ghatSectionKm: 22,
+      elevationGainMeters: 740,
+      suitabilityScore: 59,
+      isRecommended: false,
+      reasons: ['Avoids Kasara toll plaza'],
+      warnings: ['Severe ghat gradient unsuitable for gross vehicle weights > 16T'],
+      routePathDescription: 'Kalyan → Murbad → Malshej Section → Sangamner → Sinnar → Nashik',
+    }
+  ]
+};
